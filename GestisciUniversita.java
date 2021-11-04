@@ -300,19 +300,28 @@ public class GestisciUniversita {
                                 System.out.println("Inserisci la matricola dello studente di cui si vogliono visualizzare gli esami: ");
                                 int matRiepilogoEsami = input.nextInt();
                                 
+                                int contatore = 0;
+                                float mediavoti = 0;
+                                
                                 for(Studente i : listastudenti){
                                                                    
                                     if(i.getMatricola() == matRiepilogoEsami){
                                         
-                                        
+                                        System.out.println("Matricola: " + i.getMatricola() +" Nome: "+i.getNome()+" Cognome: " + i.getCognome());
                                         for(Esame j : listaesami){
-                                            if(j.getMatricolaStudente()==i.getMatricola()){
+                                            if(j.getMatricolaStudente()==i.getMatricola() && j.getSuperato()==true){
+                                                contatore++;
+                                                mediavoti+=j.getVoto();
                                                 
+                                                System.out.println("Cod. Esame: "+ j.getCodiceEsame()+ " Nome Esame: "+ j.getNomeEsame() +" CFU: " + j.getCFU()+ " Superato: " + j.getSuperato() + " Voto: " + j.getVoto());
                                             }
                                             else{
                                                 System.out.println("Nessun esame con quel codice nel piano di studi");
                                             }
                                         }
+                                        
+                                        System.out.println("Media dei voti: " + (mediavoti/contatore));
+                                        System.out.println("CFU totali: " + i.getCrediti()); 
                                     }
                                     else{
                                         System.out.println("La matricola inserita non esiste");

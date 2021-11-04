@@ -16,6 +16,7 @@ public class Studente {
     private String CorsodiLaurea;
     private boolean Laureato;
     private int Crediti;
+    private String Laurea;
     
     public static int UltimoNumeroMatricola = 0;
     
@@ -29,6 +30,7 @@ public class Studente {
         CorsodiLaurea = cl;
         Laureato = false;
         Crediti = 0;
+        Laurea = "null";
     
     }
     
@@ -50,7 +52,9 @@ public class Studente {
     public int getCrediti(){
         return Crediti;
     }
-    
+    public String getLaurea(){
+        return Laurea;
+    }
     
     
     public void setCorsodiLaurea(String cl){
@@ -65,9 +69,8 @@ public class Studente {
     public void setRitiritato(){
         CorsodiLaurea = "null";
     }
-    
-    
-    public void IscriviStudente(){
-        
+    public void setLaurea(String l){
+        Laurea = l;
     }
+
 }

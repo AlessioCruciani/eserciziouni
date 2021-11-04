@@ -9,18 +9,12 @@
  * @author aless
  */
 public class CorsoLaurea {
-    private int MatricolaStudente;
     private String Nome;
     private int MIN_CREDITI;
     
-    public CorsoLaurea(int m, String nc, int min){
-        MatricolaStudente = m;
+    public CorsoLaurea(String nc, int min){
         Nome = nc;
         MIN_CREDITI = min;
-    }
-    
-    public int getMatricolaStudente(){
-        return MatricolaStudente;
     }
     public String getNomeCorsoLaurea(){
         return Nome;

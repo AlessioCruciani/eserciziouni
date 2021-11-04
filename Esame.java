@@ -10,16 +10,25 @@
  */
 public class Esame {
     
+    private int indiceEsame;
     private int MatricolaStudente;
+    private int CodiceEsame;
     private int CFU;
     private int Voto;
     private String Nome;
     private boolean Superato = false;
     
-    public Esame(int m, int cfu, String ne){
+    public static int UltimoindiceEsame = 0;
+    
+    public Esame(int m, int cfu, String ne, int ce){
+        
+        UltimoindiceEsame++;
+        indiceEsame = UltimoindiceEsame;
+        
         MatricolaStudente = m;
         CFU = cfu;
         Nome = ne;
+        CodiceEsame = ce;
     }
     
     public int getMatricolaStudente(){
@@ -36,6 +45,12 @@ public class Esame {
     }
     public boolean getSuperato(){
         return Superato;
+    }
+    public int getCodiceEsame(){
+        return CodiceEsame;
+    }
+    public int getIndiceEsame(){
+        return indiceEsame;
     }
     
     
